@@ -9,8 +9,9 @@
     --secondary: #8b5cf6;
     --accent: #ec4899;
 
-    --text-main: #ffffff;
-    --text-muted: #a1a1aa;
+    --text-main: #f3f4f6;
+    /* Softer key white */
+    --text-muted: #9ca3af;
 
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Space Grotesk', sans-serif;
@@ -504,27 +505,60 @@ ul {
     gap: 2rem;
 }
 
+/* Scroll Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .project-card {
     background: var(--bg-card);
-    border-radius: 20px;
+    border-radius: 16px;
+    /* Slightly sharper for formal look */
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: 0.4s;
+    transition: 0.4s ease;
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+/* Formal accent for cards */
+.project-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    opacity: 0;
+    transition: 0.3s;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
+    /* Subtler hover */
     background: var(--bg-card-hover);
     border-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+.project-card:hover::before {
+    opacity: 1;
+}
+
+/* Removed .featured grid-column span for uniform look */
 .featured {
-    grid-column: 1 / -1;
-    flex-direction: row;
-    align-items: center;
+    /* grid-column: 1 / -1; - Removed */
+    flex-direction: column;
+    /* Ensure column layout */
 }
 
 .project-content {

@@ -44,45 +44,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
+                entry.target.classList.add('active');
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Fade in animation styles
-    const style = document.createElement('style');
-    style.innerHTML = `
-        .fade-in {
-            animation: fadeInUp 0.8s ease forwards;
-            opacity: 1 !important;
-        }
-        
-        .section-title, .about-content, .project-card, .timeline-item, .skill-card {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .fade-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    `;
-    document.head.appendChild(style);
-
     // Target elements to animate
-    const animatedElements = document.querySelectorAll('.section-title, .about-content, .project-card, .timeline-item, .skill-card');
-    animatedElements.forEach(el => observer.observe(el));
+    const elementsToAnimate = document.querySelectorAll('.section-title, .about-content, .project-card, .timeline-item, .skill-card, .section.reveal');
+
+    elementsToAnimate.forEach(el => {
+        el.classList.add('reveal'); // Ensure they have the base reveal class
+        observer.observe(el);
+    });
 });
