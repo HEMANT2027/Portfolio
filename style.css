@@ -227,8 +227,8 @@ ul {
     display: flex;
     align-items: center;
     padding-top: var(--nav-height);
-    padding-bottom: 4rem;
-    /* Added padding to prevent overlap */
+    padding-bottom: 10rem;
+    /* Increased padding to prevent overlap */
     position: relative;
     overflow: hidden;
 }
