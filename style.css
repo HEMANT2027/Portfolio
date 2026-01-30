@@ -798,3 +798,52 @@ ul {
         left: 0;
     }
 }
+
+/* Competitive Programming Stats */
+.cp-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.cp-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.cp-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary);
+    transform: translateX(5px);
+}
+
+.cp-logo {
+    width: 24px;
+    height: 24px;
+    opacity: 0.9;
+}
+
+.cp-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.cp-platform {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.cp-rating {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
