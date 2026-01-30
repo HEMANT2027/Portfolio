@@ -35,15 +35,19 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     font-family: var(--font-body);
-    line-height: 1.6;
+    line-height: 1.8;
+    /* Increased for better readability (Top 1% typography) */
     overflow-x: hidden;
+    letter-spacing: -0.01em;
+    /* Modern clean feel */
 }
 
 /* Global Utilities */
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
+    /* Slightly reduced padding on small screens, expands content */
 }
 
 h1,
@@ -58,7 +62,8 @@ h4,
 a {
     text-decoration: none;
     color: inherit;
-    transition: 0.3s ease;
+    transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Smoother interaction */
 }
 
 ul {
@@ -86,6 +91,8 @@ ul {
     margin-bottom: 3rem;
     position: relative;
     display: inline-block;
+    letter-spacing: -0.02em;
+    /* Tighten large headings */
 }
 
 .section-title::after {
@@ -459,7 +466,8 @@ ul {
 /* Skills Section */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Better mobile support */
     gap: 2rem;
 }
 
@@ -478,7 +486,8 @@ ul {
 .skill-card {
     background: var(--bg-card);
     padding: 1rem 1.5rem;
-    border-radius: 12px;
+    border-radius: 16px;
+    /* Matched to project cards */
     border: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     align-items: center;
@@ -501,8 +510,10 @@ ul {
 /* Projects Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Better mobile support */
+    gap: 2.5rem;
+    /* Increased gap for better breathing room */
 }
 
 /* Scroll Reveal Animation */
@@ -562,7 +573,8 @@ ul {
 }
 
 .project-content {
-    padding: 2.5rem;
+    padding: 3rem;
+    /* Increased padding relative to empty space */
     flex: 1;
 }
 
